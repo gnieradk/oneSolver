@@ -150,7 +150,7 @@ BOOST_AUTO_TEST_CASE(minimal_energy_properly_calculated) {
     qubo::QUBOModel<int, double> problem =
         qubo::QUBOModel<int, double>::load(stream);
 
-    sycl::queue q(sycl::cpu_selector{});
+    sycl::queue q(sycl::host_selector{});
     auto solution = exhaustive::solve(q, problem);
 
     BOOST_TEST_REQUIRE(std::abs(solution.energy - qubo_data.second) < 1e-13);
