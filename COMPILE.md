@@ -1,3 +1,4 @@
+```bash
 # To compile a C++ sycl program for NVIDIa
 # tutorial is for ubuntu 20.04, should work for 18.04 too
 
@@ -50,3 +51,4 @@ export PATH=$DPCPP_HOME/sycl_workspace/llvm/build/bin/:$PATH
 export LD_LIBRARY_PATH=$DPCPP_HOME/llvm/build/lib:$LD_LIBRARY_PATH
 src/one-solver-exhaustive --input ../benchmarks/exhaustive_search/examples/mvp24.qubo --output /tmp/test.csv --device-type gpu
 
+```
