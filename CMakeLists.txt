@@ -5,13 +5,14 @@ project("one-solver" CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Intel MPI compilers
+# https://software.intel.com/content/www/us/en/develop/documentation/mpi-developer-reference-linux/top/command-reference/compiler-commands.html
+set(CMAKE_C_COMPILER mpicc)
+set(CMAKE_CXX_COMPILER mpicxx)
 
-set(CMAKE_C_COMPILER icx)
-set(CMAKE_CXX_COMPILER icpx)
+# set(CMAKE_CXX_FLAGS "-fsycl")
 
-set(CMAKE_CXX_FLAGS "-fsycl")
-
-find_package(Boost 1.65)
+# find_package(Boost 1.65)
 
 add_subdirectory(src)
-add_subdirectory(tests)
+# add_subdirectory(tests)
