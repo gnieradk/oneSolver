@@ -3,7 +3,14 @@
 set(MODULE_DIRECTORY "${PROJECT_SOURCE_DIR}/src")
 set(SOURCE_DIRECTORY "${MODULE_DIRECTORY}")
 
-file(GLOB SOURCES ${SOURCE_DIRECTORY}/*mpi*.cpp)
+
+if(NOT WITH_SYCL)
+	file(GLOB SOURCES ${SOURCE_DIRECTORY}/*mpi*.cpp)
+	message(STATUS "File - no SYCL")
+else()
+	file(GLOB SOURCES ${SOURCE_DIRECTORY}/*mpi-sycl*.cpp)
+	message(STATUS "File - with SYCL")
+endif()
 
 #file(GLOB SOURCES  "${SOURCE_DIRECTORY}/*.cpp")
 foreach(sourcefile ${SOURCES})
