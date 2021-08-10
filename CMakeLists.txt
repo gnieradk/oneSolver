@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_C_COMPILER icx)
 set(CMAKE_CXX_COMPILER icpx)
 
-set(CMAKE_CXX_FLAGS "-fsycl")
+set(CMAKE_CXX_FLAGS "-fsycl  -I /net/software/local/intel-oneapi/mkl/2021.1.1/include")
 
 find_package(Boost 1.65)
 
